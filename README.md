@@ -43,11 +43,6 @@ sudo apt update
 sudo apt install ffmpeg
 ```
 
-#### On Windows:
-
-Download and extract from [FFmpeg.org](https://ffmpeg.org/download.html), and add the `bin/` folder to your system PATH.
-
----
 
 ## ▶️ Usage
 
