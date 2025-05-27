@@ -21,8 +21,8 @@ git clone https://github.com/ShriHax-21/yt-audio_downloader.git
 cd yt-audio_downloader
 ```
 
-### 2. Create Virtual Environment (Recommended)
-
+### 2. Create Virtual Environment
+"pip" doesn`t work on shell so we have to create venv enviroments 
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
