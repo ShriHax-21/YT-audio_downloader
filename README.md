@@ -33,8 +33,8 @@ Automatically installs `yt-dlp` if not already present.
 ### 1. Clone the Repository (Optional)
 
 ```bash
-git clone https://github.com/yourname/shrihax-youtube-downloader.git
-cd shrihax-youtube-downloader
+git clone https://github.com/ShriHax-21/YouTube-Downloader.git
+cd YouTube-Downloader
 ```
 
 ### 2. Create Virtual Environment (Recommended)
