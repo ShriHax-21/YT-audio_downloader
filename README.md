@@ -1,33 +1,40 @@
-# 🎵 YouTube Playlist Audio Downloader
-# ShriHax YouTube Downloader
-Add commentMore actions
-A Python script to download **audio from a YouTube playlist** and convert it to **MP3 format** using `yt-dlp` and `ffmpeg`.
-A simple, terminal-based YouTube downloader written in Python using [yt-dlp](https://github.com/yt-dlp/yt-dlp).  
-Supports audio (mp3) and video downloads, lets you choose resolution, works for playlists and single videos.
+---
+
+# 🎥 ShriHax YouTube Downloader
+
+A terminal-based YouTube **audio & video downloader** built with Python and [`yt-dlp`](https://github.com/yt-dlp/yt-dlp).
+Supports downloading **MP3 audio** or **high-resolution videos** from **individual videos or playlists**.
+Automatically installs `yt-dlp` if not already present.
 
 ---
 
 ## 🛠 Requirements
-## Features
 
 * Python 3.7+
 * [`yt-dlp`](https://github.com/yt-dlp/yt-dlp)
-* [`ffmpeg`](https://ffmpeg.org/)
-- **Download audio (mp3)** or **video** from YouTube URLs (single video or playlist)
-- **Choose video resolution** (2160, 1440, 1080, 720, 480, 360, best...)
-- **Automatic yt-dlp installation** (pip, apt, or brew)
-- **No mouse or GUI needed**, just terminal and keyboard
+* [`ffmpeg`](https://ffmpeg.org/) (only for audio conversion)
+* Terminal / Command-line
+
+---
+
+## ⭐ Features
+
+* 🎵 **Download audio (MP3)** or 🎞️ **video** from YouTube
+* 📺 Supports both **single videos** and **playlists**
+* 📽️ Choose custom resolution (e.g., 1080p, 720p, or "best")
+* 🚀 Auto-installs `yt-dlp` using `pip`, `apt`, or `brew`
+* 🧰 Lightweight CLI with **no GUI required**
+* 📂 Save files with readable, clean filenames
 
 ---
 
 ## 📦 Installation
-## Requirements
 
 ### 1. Clone the Repository (Optional)
 
 ```bash
-git clone https://github.com/yourname/yt-playlist-audio-downloader.git
-cd yt-playlist-audio-downloader
+git clone https://github.com/yourname/shrihax-youtube-downloader.git
+cd shrihax-youtube-downloader
 ```
 
 ### 2. Create Virtual Environment (Recommended)
@@ -37,13 +44,13 @@ python3 -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 ```
 
-### 3. Install Python Dependencies
+### 3. Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install yt-dlp
 ```
 
-### 4. Install ffmpeg (if not already installed)
+### 4. Install ffmpeg (required for audio download)
 
 #### On Debian/Kali/Ubuntu:
 
@@ -66,47 +73,69 @@ Run the script:
 python3 script.py
 ```
 
-You'll be prompted to enter:
+You will be prompted to:
 
-* The YouTube **playlist URL**
-* An optional download folder (default: `downloads/`)
+* Select between **audio** or **video** download
+* Enter the **YouTube URL** (video or playlist)
+* Optionally provide a **download folder**
+* For video: choose the **desired resolution**
 
 ---
 
 ## 📂 Output
 
-* Downloads all audio tracks from the playlist.
-* Converts them to **high-quality MP3** format.
-* Saves them in the chosen folder with proper filenames.
+* Downloads and saves all selected content
+* Audio is converted to **MP3** using `ffmpeg`
+* Files are stored in the chosen folder with descriptive names
 
 ---
 
 ## 🧪 Example
 
 ```bash
-Enter YouTube playlist URL: https://www.youtube.com/playlist?list=PLxyz...
-Enter download folder (default: downloads): 
+🎵 YouTube Downloader
+
+Choose download type:
+1. Audio only (MP3, works for playlist or single video)
+2. Video (works for playlist or single video)
+Enter 1 for Audio or 2 for Video: 1
+Enter YouTube video or playlist URL: https://www.youtube.com/playlist?list=PLabc...
+Enter download folder (default: download): 
 ```
 
 ---
 
 ## 🐞 Troubleshooting
 
+### 🔴 ERROR: `yt-dlp not found`
+
+The script auto-installs `yt-dlp`, but if all methods fail:
+
+* Install manually using:
+
+```bash
+pip install yt-dlp
+```
+
+Or follow instructions on [yt-dlp GitHub](https://github.com/yt-dlp/yt-dlp)
+
+---
+
 ### 🔴 ERROR: `ffmpeg not found`
 
-Make sure `ffmpeg` is installed and accessible in your system PATH:
+Make sure `ffmpeg` is installed and accessible:
 
 ```bash
 ffmpeg -version
 ```
 
-If not, [install it here](https://ffmpeg.org/download.html).
+If the command fails, [install ffmpeg](https://ffmpeg.org/download.html) and ensure it’s added to your system PATH.
 
 ---
 
 ## 📃 License
 
-MIT License. Free to use and modify.
-- Python 3.x
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) (auto-installs if missing)
-- `pip`, `apt`, or `brew` for auto-install (or install yt-dlp manually)
+MIT License.
+Free to use, share, and modify.
+
+---
