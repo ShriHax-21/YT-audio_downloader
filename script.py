@@ -62,10 +62,8 @@ def download_audio(url: str, download_folder: str = "download") -> None:
 
 def download_video(url: str, download_folder: str = "download", resolution: str = "best") -> None:
     os.makedirs(download_folder, exist_ok=True)
-    if resolution.lower() == "best":
-        format_selector = "bestvideo+bestaudio/best"
-    else:
-        format_selector = f"bestvideo[height={resolution}]+bestaudio/best[height={resolution}]/best"
+    # Always use user-provided resolution, do not default to "best"
+    format_selector = f"bestvideo[height={resolution}]+bestaudio/best[height={resolution}]/best"
     command = [
         "yt-dlp",
         "-f", format_selector,
@@ -99,8 +97,12 @@ def main():
     if option == "1":
         download_audio(url, download_folder)
     elif option == "2":
-        print("\nAvailable resolutions examples: 2160, 1440, 1080, 720, 480, 360, best")
-        resolution = input("Enter desired resolution (e.g., 1080 for 1080p, or 'best' for highest): ").strip() or "best"
+        print("\nAvailable resolutions: 2160, 1440, 1080, 720, 480, 360")
+        resolution = ""
+        while not (resolution.isdigit() and int(resolution) > 0):
+            resolution = input("Enter desired resolution (e.g., 1080 for 1080p): ").strip()
+            if not (resolution.isdigit() and int(resolution) > 0):
+                print("Please enter a valid numeric resolution (e.g., 1080).")
         download_video(url, download_folder, resolution)
     else:
         print("Invalid option selected. Exiting.")
